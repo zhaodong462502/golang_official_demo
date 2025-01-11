@@ -1,11 +1,9 @@
 package main
 
 import (
+	"example.com/greetings"
 	"fmt"
 	"log"
-
-	// "rsc.io/quote"
-	"example.com/greetings"
 )
 
 func main() {
@@ -14,9 +12,16 @@ func main() {
 
 	// fmt.Println("Hello World!")
 	// fmt.Println(quote.Go())
-	message, err := greetings.Hello("")
+
+	//message, err := greetings.Hello("Gladys")
+	//if err != nil {
+	//	log.Fatal(err)
+	//}
+	//fmt.Println(message)
+	names := []string{"Gladys", "Samantha", "Darrin"}
+	messages, err := greetings.Hellos(names)
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Println(message)
+	fmt.Println(messages)
 }
